@@ -15,7 +15,7 @@ interface ChatMessage {
     timestamp?: number;
 }
 
-class ChatServer {
+export class ChatServer {
     private wss: WebSocketServer;
     //key would b roomId as it will help to fetch the room in O(1) time.
     private rooms: Map<string, Room> = new Map();
@@ -262,4 +262,4 @@ class ChatServer {
     }
 }
 
-console.log("WebSocketServer is running on: 8080");
+const chat_server = new ChatServer(8080);
